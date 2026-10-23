@@ -177,6 +177,7 @@ $env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
 if (file_exists($env_config)) {
     require_once $env_config;
 }
+Config::define('LENDLY_ENCRYPTION_KEY', env('LENDLY_ENCRYPTION_KEY'));
 
 Config::apply();
 

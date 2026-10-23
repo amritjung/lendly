@@ -1,0 +1,73 @@
+/* Lendly Loans front-end. Colours inherit from the theme's CSS variables when present. */
+.lendly-calc, .lendly-apply {
+	--l-brand: var(--brand, #5b3fd6);
+	--l-brand-ink: var(--brand-ink, #fff);
+	--l-ink: var(--ink, #1d1b2c);
+	--l-muted: var(--muted, #6b6880);
+	--l-line: var(--line, #e3e1ee);
+	--l-bg: var(--surface, #fff);
+	--l-radius: 14px;
+	color: var(--l-ink);
+	font-size: 16px;
+}
+
+/* Calculator */
+.lendly-calc { background: var(--l-bg); border-radius: 20px; padding: 28px; box-shadow: 0 20px 50px rgba(30, 20, 80, .12); }
+.lendly-calc__title { margin: 0 0 18px; font-size: 1.25rem; }
+.lendly-calc__label { display: flex; justify-content: space-between; align-items: baseline; font-weight: 600; margin: 18px 0 8px; }
+.lendly-calc__value { font-size: 1.6rem; color: var(--l-brand); font-weight: 700; }
+.lendly-calc input[type=range] { width: 100%; appearance: none; height: 8px; border-radius: 99px; background: linear-gradient(90deg, var(--l-brand) var(--fill, 50%), var(--l-line) var(--fill, 50%)); outline-offset: 6px; }
+.lendly-calc input[type=range]::-webkit-slider-thumb { appearance: none; width: 26px; height: 26px; border-radius: 50%; background: #fff; border: 3px solid var(--l-brand); cursor: pointer; }
+.lendly-calc input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: #fff; border: 3px solid var(--l-brand); cursor: pointer; }
+.lendly-calc__terms { display: flex; flex-wrap: wrap; gap: 8px; }
+.lendly-chip input { position: absolute; opacity: 0; }
+.lendly-chip span { display: inline-block; padding: 8px 14px; border: 1px solid var(--l-line); border-radius: 99px; cursor: pointer; font-size: .9rem; }
+.lendly-chip input:checked + span { background: var(--l-brand); color: var(--l-brand-ink); border-color: var(--l-brand); }
+.lendly-chip input:focus-visible + span { outline: 2px solid var(--l-brand); outline-offset: 2px; }
+.lendly-calc select, .lendly-form input:not([type=checkbox]), .lendly-form select {
+	width: 100%; padding: 12px 14px; border: 1px solid var(--l-line); border-radius: 10px; font: inherit; background: #fff; color: var(--l-ink);
+}
+.lendly-calc__result { margin: 22px 0 16px; padding: 18px; border-radius: var(--l-radius); background: color-mix(in srgb, var(--l-brand) 8%, #fff); display: grid; gap: 4px; }
+.lendly-calc__result strong { font-size: 1.9rem; }
+.lendly-calc__result small, .lendly-calc__disclaimer { color: var(--l-muted); }
+.lendly-calc__disclaimer { font-size: .75rem; line-height: 1.45; margin-top: 16px; }
+
+.lendly-btn { display: inline-flex; justify-content: center; align-items: center; gap: 8px; width: 100%; padding: 14px 22px; border: 0; border-radius: 99px; background: var(--l-brand); color: var(--l-brand-ink); font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; transition: transform .15s, filter .15s; }
+.lendly-btn:hover { filter: brightness(1.08); transform: translateY(-1px); color: var(--l-brand-ink); }
+.lendly-btn[disabled] { opacity: .6; cursor: wait; }
+.lendly-btn--ghost { background: transparent; color: var(--l-ink); border: 1px solid var(--l-line); }
+
+/* Application */
+.lendly-apply { max-width: 680px; margin: 0 auto; }
+.lendly-progress { list-style: none; display: flex; gap: 8px; padding: 0; margin: 0 0 28px; counter-reset: s; overflow-x: auto; }
+.lendly-progress li { flex: 1; min-width: 90px; font-size: .8rem; color: var(--l-muted); border-top: 4px solid var(--l-line); padding-top: 8px; }
+.lendly-progress li span { display: none; }
+.lendly-progress li.is-active { color: var(--l-ink); font-weight: 700; border-color: var(--l-brand); }
+.lendly-progress li.is-done { border-color: color-mix(in srgb, var(--l-brand) 45%, #fff); }
+.lendly-form { background: var(--l-bg); border: 1px solid var(--l-line); border-radius: 20px; padding: 28px; }
+.lendly-step { border: 0; padding: 0; margin: 0; }
+.lendly-step legend { font-size: 1.4rem; font-weight: 700; margin-bottom: 16px; padding: 0; }
+.lendly-field { margin-bottom: 16px; }
+.lendly-field label { display: block; font-weight: 600; margin-bottom: 6px; font-size: .95rem; }
+.lendly-form [aria-invalid=true] { border-color: #c62828; }
+.lendly-error { display: block; color: #c62828; font-size: .85rem; min-height: 0; margin-top: 4px; }
+.lendly-error:empty { display: none; }
+.lendly-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+.lendly-grid--3 { grid-template-columns: 2fr 1fr 1fr; }
+.lendly-help { color: var(--l-muted); margin-top: -8px; }
+.lendly-check { display: flex; gap: 10px; align-items: flex-start; margin: 14px 0 2px; line-height: 1.4; }
+.lendly-check input { margin-top: 3px; width: 18px; height: 18px; flex: none; accent-color: var(--l-brand); }
+.lendly-review { display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; padding: 16px; background: #faf9fd; border-radius: var(--l-radius); margin: 0 0 18px; }
+.lendly-review dt { color: var(--l-muted); }
+.lendly-review dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.lendly-form__nav { display: flex; gap: 12px; margin-top: 24px; }
+.lendly-form__nav .lendly-btn { flex: 1; }
+.lendly-form__alert { margin-top: 16px; padding: 12px 14px; border-radius: 10px; background: #fdecea; color: #8e1c1c; }
+.lendly-success { text-align: center; padding: 40px 24px; border: 1px solid var(--l-line); border-radius: 20px; }
+.lendly-hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+@media (max-width: 600px) {
+	.lendly-grid, .lendly-grid--3 { grid-template-columns: 1fr; }
+	.lendly-form, .lendly-calc { padding: 20px; }
+}
+.lendly-apply [hidden] { display: none !important; }

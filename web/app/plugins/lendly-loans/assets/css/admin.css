@@ -1,0 +1,14 @@
+.lendly-status { display: inline-block; padding: 2px 10px; border-radius: 99px; font-size: 12px; font-weight: 600; background: #f0f0f1; vertical-align: middle; }
+.lendly-status--new { background: #e5f0ff; color: #0a4b9e; }
+.lendly-status--reviewing, .lendly-status--more_info { background: #fff4e0; color: #8a5300; }
+.lendly-status--approved { background: #e3f6e8; color: #17692f; }
+.lendly-status--declined, .lendly-status--withdrawn { background: #fbe9e9; color: #9e1c1c; }
+.lendly-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 16px 0 8px; }
+.lendly-card { background: #fff; border: 1px solid #dcdcde; border-radius: 8px; padding: 14px 16px; }
+.lendly-card span { display: block; color: #646970; font-size: 12px; }
+.lendly-card strong { font-size: 20px; }
+.lendly-card.is-good strong { color: #17692f; }
+.lendly-card.is-bad strong { color: #b32d2e; }
+.lendly-columns { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: start; }
+.lendly-columns th { width: 40%; }
+@media (max-width: 960px) { .lendly-columns { grid-template-columns: 1fr; } }
