@@ -93,6 +93,7 @@ class Lendly_Shortcodes {
 			'window.LENDLY_APPLY = ' . wp_json_encode( [
 				'endpoint' => esc_url_raw( rest_url( 'lendly/v1/applications' ) ),
 				'nonce'    => wp_create_nonce( 'lendly_apply' ),
+				'restNonce' => wp_create_nonce( 'wp_rest' ), // keeps logged-in users authenticated on the REST call.
 			] ) . ';',
 			'before'
 		);

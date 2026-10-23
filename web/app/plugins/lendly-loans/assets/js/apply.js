@@ -127,7 +127,7 @@
 			fetch(api.endpoint, {
 				method: 'POST',
 				credentials: 'same-origin',
-				headers: { 'Content-Type': 'application/json', 'X-Lendly-Nonce': api.nonce },
+				headers: { 'Content-Type': 'application/json', 'X-Lendly-Nonce': api.nonce, 'X-WP-Nonce': api.restNonce },
 				body: JSON.stringify(data())
 			})
 				.then(function (res) { return res.json().then(function (body) { return { status: res.status, body: body }; }); })
